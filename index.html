@@ -32,7 +32,7 @@
         .garment-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1); border-color: #10b981; }
         .tag-pill { font-feature-settings: "tnum"; font-variant-numeric: tabular-nums; }
 
-        /* [NEW] 스플래시 스크린 애니메이션 */
+        /* 스플래시 스크린 애니메이션 */
         #splash-screen {
             transition: opacity 0.5s ease-out, visibility 0.5s;
         }
@@ -44,7 +44,7 @@
         
         /* 0.5초 페이드인 키프레임 */
         @keyframes fadeInImage {
-            from { opacity: 0; transform: scale(0.95); }
+            from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
         .splash-img-anim {
@@ -55,7 +55,7 @@
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 h-[100dvh] flex flex-col md:flex-row overflow-hidden transition-colors duration-300">
 
     <div id="splash-screen" class="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center">
-        <img src="SplashScreen.png" alt="Splash" class="w-40 h-40 object-contain splash-img-anim">
+        <img src="SplashScreen.png" alt="Splash" class="w-80 h-80 object-contain splash-img-anim">
     </div>
 
     <header class="md:hidden bg-slate-900 text-white p-4 flex justify-between items-center z-50 shadow-lg shrink-0 h-16">
@@ -78,7 +78,7 @@
                 <img src="logo.png" alt="Logo" class="w-12 h-12 object-contain">
                 <div><h1 class="text-xl font-bold text-white tracking-tight leading-none">GARMENT<br>CODE</h1></div>
             </div>
-            <p class="text-[10px] text-emerald-500 font-bold uppercase tracking-widest mt-4 ml-1">Professional Guide v3.3</p>
+            <p class="text-[10px] text-emerald-500 font-bold uppercase tracking-widest mt-4 ml-1">Professional Guide v3.5</p>
         </div>
 
         <div class="md:hidden flex items-center justify-between p-4 border-b border-slate-800 shrink-0 bg-[#0f172a]">
@@ -259,40 +259,48 @@
             { cat: '후가공', sub: '기능', name: '발수 가공 (DWR)', alias: '', desc: '물 튕겨냄.', pros: '생활 방수.', cons: '세탁 시 기능 저하.', usage: '아웃도어.', tip: '완전 방수 아님.' },
             { cat: '후가공', sub: '기능', name: '텐타 가공 (Tentering)', alias: '', desc: '열로 폭 고정.', pros: '형태 안정.', cons: '', usage: '니트.', tip: '안 하면 옷이 돌아감.' },
             { cat: '후가공', sub: '기능', name: '캘린더링 (Calendering)', alias: '', desc: '롤러로 눌러 광택/평활.', pros: '매끈함, 광택.', cons: '통기성 감소.', usage: '다운 자켓 겉감.', tip: '바람 막는 효과.' },
+            { cat: '후가공', sub: '염색', name: '선염 (Yarn Dyed)', alias: '', desc: '실을 먼저 염색해 짬.', pros: '색감 깊이, 체크무늬.', cons: '최소 수량(MOQ) 큼.', usage: '체크 셔츠.', tip: '앞뒤 색이 같음.' },
+            { cat: '후가공', sub: '염색', name: '후염 (Piece Dyed)', alias: '', desc: '원단을 짜고 염색.', pros: '색상 다양, 소량 생산.', cons: '단색만 가능.', usage: '일반 원단.', tip: '가장 일반적.' },
+            { cat: '후가공', sub: '염색', name: '가먼트 다잉 (Garment Dye)', alias: '', desc: '옷을 다 만들고 염색.', pros: '빈티지, 봉제선 수축.', cons: '불량률 높음.', usage: '캐주얼 의류.', tip: '자연스러운 멋.' },
             
+            // [NEW] 원단 직기 추가
             { cat: '원단 (직기/천연)', sub: '면', name: '시어서커 (Seersucker)', alias: '지지미', desc: '경사의 장력을 다르게 하여 표면에 오목볼목한 주름을 만든 직물.', pros: '피부에 닿는 면적이 적어 시원함.', cons: '겨울엔 추움.', usage: '여름 셔츠, 파자마.', tip: '다림질이 필요 없는 대표적 여름 원단.' },
             { cat: '원단 (직기/천연)', sub: '면', name: '샴브레이 (Chambray)', alias: '', desc: '경사는 색실, 위사는 흰실을 사용한 평직물. 데님과 비슷하나 훨씬 얇음.', pros: '가볍고 통기성 우수.', cons: '구김이 생김.', usage: '여름 셔츠, 원피스.', tip: '데님 느낌을 내고 싶을 때 대체재로 훌륭함.' },
             { cat: '원단 (직기/천연)', sub: '면', name: '플라넬 (Flannel)', alias: '법넬', desc: '표면을 긁어 미세한 기모를 낸 부드러운 직물.', pros: '따뜻하고 부드러움.', cons: '보풀(Pilling) 발생.', usage: '가을/겨울 체크 셔츠, 파자마.', tip: '기모 방향을 맞춰 재단해야 함.' },
             { cat: '원단 (직기/합성)', sub: '합성', name: '자카드 (Jacquard)', alias: '', desc: '직조 기계로 무늬를 입체적으로 짜낸 원단.', pros: '프린트가 아닌 직조 무늬로 고급스러움.', cons: '두껍고 단가가 높음.', usage: '고급 자켓, 커튼, 넥타이.', tip: '원단 뒷면에 실이 얽힌 구조가 보임.' },
             { cat: '원단 (직기/합성)', sub: '합성', name: '벨벳 (Velvet)', alias: '비로드', desc: '짧고 부드러운 솜털(Pile)이 촘촘히 심어진 직물.', pros: '특유의 광택과 고급스러움, 보온성.', cons: '먼지가 잘 붙고 다림질 까다로움.', usage: '겨울 원피스, 이브닝 웨어.', tip: '다림질 시 절대 직접 누르지 말고 스팀만 사용.' },
 
+            // [NEW] 원단 니트 추가
             { cat: '원단 (니트)', sub: '위편', name: '폴라플리스 (Polar Fleece)', alias: '폴라폴리스', desc: '폴리에스터 니트 표면을 긁어 양털처럼 만든 소재.', pros: '가볍고 따뜻함, 물에 강함.', cons: '정전기 발생, 불에 매우 약함.', usage: '겨울철 아우터, 안감.', tip: '보풀 방지(Anti-pilling) 가공 여부 확인 필수.' },
             { cat: '원단 (니트)', sub: '위편', name: '덤블플리스 (Tumble Fleece)', alias: '뽀글이', desc: '플리스의 털을 양털처럼 뭉치게(덤블) 가공한 원단.', pros: '귀여운 외관, 뛰어난 보온성.', cons: '때가 잘 타고 부피가 큼.', usage: '플리스 자켓, 겨울 코트.', tip: '안감을 대어 방풍 효과를 높이는 것이 좋음.' },
 
+            // [NEW] 특수 소재 기능성 추가
             { cat: '특수 소재', sub: '기능성', name: '쿨맥스 (Coolmax)', alias: '', desc: '땀을 빠르게 흡수하고 배출하는(흡한속건) 기능성 폴리 섬유.', pros: '쾌적함 유지, 건조가 빠름.', cons: '천연섬유의 부드러움은 부족.', usage: '스포츠웨어, 아웃도어.', tip: '여름철 액티브 웨어 필수 소재.' },
             { cat: '특수 소재', sub: '기능성', name: '고어텍스 (Gore-Tex)', alias: '', desc: '방수성과 투습성(땀 배출)을 동시에 갖춘 다공성 멤브레인 필름.', pros: '비는 막고 땀은 배출함(숨쉬는 원단).', cons: '매우 고가, 세탁 까다로움.', usage: '전문 등산복, 스키복.', tip: '봉제선으로 물이 새지 않게 심실링(Seam Sealing) 필수.' },
 
+            // [NEW] 부자재 체결 (스트링/고리 등) 추가
             { cat: '부자재 (체결)', sub: '부속품', name: '스토퍼 (Stopper)', alias: '돼지코', desc: '스트링(끈)의 길이를 조절하고 고정하는 부속품.', pros: '사이즈 조절 편리.', cons: '스프링 고장 시 교체 필요.', usage: '후드, 바람막이 밑단.', tip: '1구, 2구, 금속, 플라스틱 등 종류 다양.' },
             { cat: '부자재 (체결)', sub: '부속품', name: '스트링 (String)', alias: '끈', desc: '후드나 허리 단에 넣는 조임끈.', pros: '디자인 포인트, 핏 조절.', cons: '세탁 시 빠질 수 있음.', usage: '맨투맨, 트레이닝 팬츠.', tip: '끝부분 팁(금속/투명) 마감이 퀄리티를 결정함.' },
             { cat: '부자재 (체결)', sub: '금속', name: 'D링 (D-Ring)', alias: '', desc: '알파벳 D 모양의 금속 또는 플라스틱 고리.', pros: '끈 연결 및 길이 조절 기능.', cons: '무거울 수 있음.', usage: '가방, 벨트, 트렌치코트 소매.', tip: '원단 두께에 맞는 내경 사이즈 선택.' },
             { cat: '부자재 (체결)', sub: '금속', name: '가시도트 (Prong Snap)', alias: '링도트', desc: '원단에 구멍을 뚫지 않고 가시발로 찔러 고정하는 스냅.', pros: '얇은 원단에 적합, 부착 속도 빠름.', cons: '두꺼운 원단에는 발이 안 박힘.', usage: '유아복, 얇은 셔츠.', tip: '아이들 옷에는 일반 스냅보다 안전함.' },
 
+            // [NEW] 봉제 특수 추가
             { cat: '봉제', sub: '특수', name: '핫멜트 (Hot Melt)', alias: '무봉제', desc: '열접착 필름을 이용해 실 없이 원단을 붙이는 기법.', pros: '매끄러운 라인, 경량화.', cons: '세탁(열)에 의해 떨어질 수 있음.', usage: '심리스 속옷, 고기능성 아웃도어.', tip: '초음파 융착 기술과 함께 사용됨.' },
             { cat: '봉제', sub: '특수', name: '니혼바리 (Twin Needle)', alias: '두줄박기', desc: '두 개의 바늘로 나란히 두 줄의 스티치를 박는 봉제.', pros: '매우 튼튼함, 시각적 포인트.', cons: '봉제선이 뻣뻣해짐.', usage: '청바지 옆선, 워크웨어 셔츠.', tip: '청바지 가랑이(인심)에 필수적으로 사용.' },
 
+            // [NEW] 패턴 용어 추가
             { cat: '패턴/용어', sub: '패턴', name: '암홀 (Armhole)', alias: '진동', desc: '몸통과 소매가 연결되는 진동둘레.', pros: '팔의 활동성 결정.', cons: '', usage: '패턴 설계.', tip: '암홀이 너무 깊으면 팔을 들 때 옷이 다 딸려 올라감.' },
             { cat: '패턴/용어', sub: '패턴', name: '마찌 (Gusset/Depth)', alias: '폭', desc: '가방의 옆면 폭이나, 옷에 입체감을 주기 위해 덧대는 패널.', pros: '수납력 증가, 입체감 형성.', cons: '재단 및 봉제 공정 추가.', usage: '에코백 옆면, 텐트.', tip: '마찌가 있어야 바닥이 평평해짐.' },
             { cat: '패턴/용어', sub: '패턴', name: '고지라인 (Gorge Line)', alias: '에리선', desc: '자켓의 윗깃(Collar)과 아래깃(Lapel)이 만나는 봉제선.', pros: '자켓의 인상과 트렌드를 결정.', cons: '', usage: '수트 자켓 디자인.', tip: '고지라인이 높으면 키가 커 보이고 젊은 느낌을 줌.' },
 
+            // [NEW] 후가공 워싱 추가
             { cat: '후가공', sub: '워싱', name: '덤블 워싱 (Tumble Washing)', alias: '덤블가공', desc: '원단에 수분을 공급한 후 회전 건조기로 열과 충격을 가하는 공정.', pros: '세탁 후 원단이 줄어드는 것을 90% 이상 방지.', cons: '공정 단가 추가.', usage: '면 쭈리, 다이마루 원단.', tip: '텐타 가공과 세트로 진행됨(텐타-덤블).' },
             { cat: '후가공', sub: '워싱', name: '노멀 워싱 (Normal Washing)', alias: '물워싱', desc: '가장 기본적인 물세탁 공정.', pros: '불순물 제거, 기본적인 수축 잡음.', cons: '드라마틱한 변화는 없음.', usage: '대부분의 캐주얼 의류.', tip: '옷의 뻣뻣함을 없애고 내추럴하게 만들어줌.' },
 
+            // [NEW] 후가공 기능성 추가
             { cat: '후가공', sub: '기능', name: 'PU 코팅 (Polyurethane Coating)', alias: '', desc: '원단 이면에 폴리우레탄 필름을 얇게 입히는 가공.', pros: '방풍(바람막이) 및 방수 효과 우수.', cons: '통기성 부족, 오래되면 코팅이 가루처럼 떨어짐(가수분해).', usage: '바람막이, 아웃도어 백팩.', tip: '코팅 면이 피부에 닿으면 끈적이므로 안감 필수.' },
 
-            { cat: '후가공', sub: '염색', name: '선염 (Yarn Dyed)', alias: '', desc: '실을 먼저 염색해 짬.', pros: '색감 깊이, 체크무늬.', cons: '최소 수량(MOQ) 큼.', usage: '체크 셔츠.', tip: '앞뒤 색이 같음.' },
-            { cat: '후가공', sub: '염색', name: '후염 (Piece Dyed)', alias: '', desc: '원단을 짜고 염색.', pros: '색상 다양, 소량 생산.', cons: '단색만 가능.', usage: '일반 원단.', tip: '가장 일반적.' },
-            { cat: '후가공', sub: '염색', name: '가먼트 다잉 (Garment Dye)', alias: '', desc: '옷을 다 만들고 염색.', pros: '빈티지, 봉제선 수축.', cons: '불량률 높음.', usage: '캐주얼 의류.', tip: '자연스러운 멋.' },
-            
+            // [NEW] 후가공 염색 추가
             { cat: '후가공', sub: '염색', name: '피그먼트 다잉 (Pigment Dye)', alias: '피그먼트', desc: '안료를 원단 겉면에만 불규칙하게 코팅하듯 입히는 염색.', pros: '물빠짐이 자연스럽고 빈티지함.', cons: '이염이 심해 단독 세탁 필수.', usage: '빈티지 맨투맨, 티셔츠.', tip: '봉제선(시접)에 염료가 덜 묻어 하얗게 보이는 것이 매력.' }
         ];
 
@@ -354,14 +362,14 @@
             document.getElementById('totalCount').innerText = DB.length;
             renderGrid(DB);
 
-            // [NEW] 스플래시 스크린 자동 숨김 (1초 후)
+            // [NEW] 스플래시 스크린 자동 숨김 (1.3초 후)
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 if(splash) {
                     splash.classList.add('hide-splash');
                     setTimeout(() => splash.remove(), 500); // 0.5초 페이드아웃 후 제거
                 }
-            }, 1000); // 총 1초 유지
+            }, 1300); // 총 1.3초 유지
         }
 
         function renderGrid(data) {
